@@ -2,59 +2,44 @@
 
 This repository is the official implementation of [Automorphic Equivalence-aware Graph Neural Network](https://arxiv.org/abs/2011.04218). 
 
-![alt text](https://github.com/tsinghua-fib-lab/GRAPE/blob/main/overview.jpg?raw=true)
+![alt text](https://github.com/tsinghua-fib-lab/GRAPE/blob/main/main.png?raw=true)
 
-## Requirements
+## Dependencies
 
-To install requirements:
+This implementation depends on the following enviornment and packages:
 
 ```setup
-pip install -r requirements.txt
+python == 2.7
+pytorch == 1.4
+numpy == 1.17.2
+scipy == 1.6.3
+sklearn ==0.24.1
+networkx == 2.5
+h5py == 2.9.0
+GPUtil ==1.4.0
+setproctitle == 1.1.10
 ```
 
->📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
+## Training and Evaluation
 
-## Training
-
-To train the model(s) in the paper, run this command:
+To train and evaluate the model(s) in the paper, run this command:
 
 ```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+python grape_model.py [gpu_module_id] 
 ```
 
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
 
-## Evaluation
-
-To evaluate my model on ImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
+```train
+python genetic_search.py [gpu_module_id] [dataset_id] 
 ```
 
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
 
 ## Results
 
-Our model achieves the following performance on :
-
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
-
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
-| ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
-
->📋  Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
+Our model achieves the following classification accuracy:
 
 
-## Contributing
+|  | Hamilton | Lehigh | Rochester | JHU | Amherst | Cora | Citeseer | Amazon |
+| ------------------ |---------------- | -------------- | ---------------- | -------------- | ---------------- | -------------- | ---------------- | -------------- |
+|  GRAPE  | 28.1% | 27.3% | 25.0% | 34.6% | 32.6% | 87.1% | 74.6% | 58.6% |
 
->📋  Pick a licence and describe how to contribute to your code repository. 
