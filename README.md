@@ -14,7 +14,6 @@ pytorch == 1.4
 numpy == 1.17.2
 scipy == 1.6.3
 sklearn ==0.24.1
-networkx == 2.5
 h5py == 2.9.0
 GPUtil ==1.4.0
 setproctitle == 1.1.10
@@ -25,14 +24,8 @@ setproctitle == 1.1.10
 To train and evaluate the model(s) in the paper, run this command:
 
 ```train
-python grape_model.py [gpu_module_id] 
+python grape_model.py --data='cite|cora' --gpu='0' --lr=0.003 --wd=0.00003 --dropout=0.5 --hid=32 
 ```
-
-
-```train
-python genetic_search.py [gpu_module_id] [dataset_id] 
-```
-
 
 ## Results
 
