@@ -157,7 +157,7 @@ for ind in range(test_run):
     idx_val = torch.LongTensor(idx_val)
     idx_test = torch.LongTensor(idx_test)
 
-    acc = train_model(nlayer, nepoch, motifadj_test, features, labels, idx_train, idx_val, idx_test, attn, args.lr, args.wd, args.dropout, args.hid)
+    acc = train_model(nlayer, nepoch, motifadj_test, features, labels, idx_train, idx_val, idx_test, attn, float(args.lr), float(args.wd), float(args.dropout), int(args.hid))
     test_score.append(acc)
 
 test_acc_mean, test_acc_std = np.mean(test_score), np.std(test_score)
